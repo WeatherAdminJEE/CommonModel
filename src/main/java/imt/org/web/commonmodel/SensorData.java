@@ -12,8 +12,8 @@ import java.sql.Timestamp;
 public class SensorData {
 
     private int idSensor;
-    private int idCountry;
-    private int idCity;
+    private String idCountry;
+    private String idCity;
     private Measure measure;
     private Timestamp date;
 }
