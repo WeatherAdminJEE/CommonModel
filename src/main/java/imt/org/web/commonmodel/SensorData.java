@@ -15,6 +15,8 @@ public class SensorData implements Serializable {
     private int idSensor;
     private String idCountry;
     private String idCity;
-    private Measure measure;
+    private String gpsCoordinates;
+    private MeasureType measureType;
+    private double measureValue;
     private Timestamp date;
 }
