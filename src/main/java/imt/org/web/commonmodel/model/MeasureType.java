@@ -1,4 +1,4 @@
-package imt.org.web.commonmodel;
+package imt.org.web.commonmodel.model;
 
 import lombok.Getter;
 

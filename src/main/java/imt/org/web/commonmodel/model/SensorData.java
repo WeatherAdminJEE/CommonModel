@@ -1,4 +1,4 @@
-package imt.org.web.commonmodel;
+package imt.org.web.commonmodel.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,6 +7,9 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+/**
+ * Sensor data
+ */
 @Getter
 @Setter
 @AllArgsConstructor
