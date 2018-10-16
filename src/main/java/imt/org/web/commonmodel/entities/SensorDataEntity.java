@@ -5,10 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
@@ -20,10 +17,10 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 public class SensorDataEntity implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_sensor_data", nullable = false)
     private int idSensorData;
     @Column(name = "id_sensor", nullable = false)
@@ -40,4 +37,14 @@ public class SensorDataEntity implements Serializable {
     private double measureValue;
     @Column(name = "date", nullable = false)
     private Timestamp date;
+
+    public SensorDataEntity(int idSensor, String idCountry, String idCity, String gpsCoordinates, int idMeasureType, double measureValue, Timestamp date) {
+        this.idSensor = idSensor;
+        this.idCountry = idCountry;
+        this.idCity = idCity;
+        this.gpsCoordinates = gpsCoordinates;
+        this.idMeasureType = idMeasureType;
+        this.measureValue = measureValue;
+        this.date = date;
+    }
 }
