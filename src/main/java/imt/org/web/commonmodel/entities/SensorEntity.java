@@ -12,19 +12,19 @@ import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
- * Sensor measure type entity
+ * Sensor entity
  */
 @Entity
-@Table(name = "MEASURE_TYPE")
+@Table(name = "SENSOR")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class MeasureTypeEntity implements Serializable {
+public class SensorEntity implements Serializable {
 
     @Id
-    @Column(name = "id_measure_type", nullable = false)
-    private int idMeasureType;
-    @Column(name = "name_measure_type", nullable = false)
-    private String nameMeasureType;
+    @Column(name = "id_sensor", nullable = false)
+    private int idSensor;
+    @Column(name = "name_sensor", nullable = false)
+    private String nameSensor;
 }

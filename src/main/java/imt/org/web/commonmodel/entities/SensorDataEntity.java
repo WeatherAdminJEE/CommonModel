@@ -24,18 +24,20 @@ import java.sql.Timestamp;
 public class SensorDataEntity implements Serializable {
 
     @Id
-    @Column(name = "sensor_id", nullable = false)
+    @Column(name = "id_sensor_data", nullable = false)
+    private int idSensorData;
+    @Column(name = "id_sensor", nullable = false)
     private int idSensor;
     @Column(name = "id_country", nullable = false)
     private String idCountry;
     @Column(name = "id_city", nullable = false)
     private String idCity;
-    @Column(name = "gps", nullable = false)
+    @Column(name = "gps_coordinates", nullable = false)
     private String gpsCoordinates;
-    @Column(name = "measure_type", nullable = false)
-    private int measureType;
+    @Column(name = "id_measure_type", nullable = false)
+    private int idMeasureType;
     @Column(name = "measure_value", nullable = false)
     private double measureValue;
-    @Column(name = "date_measure", nullable = false)
+    @Column(name = "date", nullable = false)
     private Timestamp date;
 }
