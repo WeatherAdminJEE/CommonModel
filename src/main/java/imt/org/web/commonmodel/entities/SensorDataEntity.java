@@ -46,4 +46,15 @@ public class SensorDataEntity implements Serializable {
         this.measureValue = measureValue;
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "SensorDataEntity (idSensor=" + idSensor + ")\n" +
+                "\tidCountry=" + idCountry + "\n" +
+                "\tidCity=" + idCity + "\n" +
+                "\tgpsCoordinates=" + gpsCoordinates + "\n" +
+                "\tidMeasureType=" + idMeasureType + "\n" +
+                "\tmeasureValue=" + measureValue + "\n" +
+                "\tdate=" + date + "\n";
+    }
 }

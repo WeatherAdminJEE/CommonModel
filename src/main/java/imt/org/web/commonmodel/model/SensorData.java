@@ -22,4 +22,15 @@ public class SensorData implements Serializable {
     private MeasureType measureType;
     private double measureValue;
     private Timestamp date;
+
+    @Override
+    public String toString() {
+        return "SensorData(idSensor=" + idSensor + ")\n" +
+                "\tidCountry=" + idCountry + "\n" +
+                "\tidCity=" + idCity + "\n" +
+                "\tgpsCoordinates=" + gpsCoordinates + "\n" +
+                "\tmeasureType=" + measureType + "\n" +
+                "\tmeasureValue=" + measureValue + "\n" +
+                "\tdate=" + date + "\n";
+    }
 }

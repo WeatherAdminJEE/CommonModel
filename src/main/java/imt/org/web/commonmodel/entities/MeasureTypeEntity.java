@@ -27,4 +27,11 @@ public class MeasureTypeEntity implements Serializable {
     private int idMeasureType;
     @Column(name = "name_measure_type", nullable = false)
     private String nameMeasureType;
+
+    @Override
+    public String toString() {
+        return "MeasureTypeEntity()\n" +
+                "\tidMeasureType=" + idMeasureType + "\n" +
+                "\tnameMeasureType=" + nameMeasureType + "\n";
+    }
 }

@@ -27,4 +27,11 @@ public class SensorEntity implements Serializable {
     private int idSensor;
     @Column(name = "name_sensor", nullable = false)
     private String nameSensor;
+
+    @Override
+    public String toString() {
+        return "SensorEntity()\n" +
+                "\tidSensor=" + idSensor + "\n" +
+                "\tnameSensor='" + nameSensor + "\n";
+    }
 }
