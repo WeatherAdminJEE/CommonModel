@@ -1,6 +1,5 @@
 package imt.org.web.commonmodel.entities;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,7 +19,7 @@ import java.sql.Timestamp;
 public class SensorDataEntity implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_sensor_data", nullable = false)
     private int idSensorData;
     @Column(name = "id_sensor", nullable = false)
