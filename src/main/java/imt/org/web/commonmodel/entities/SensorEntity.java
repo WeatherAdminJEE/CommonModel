@@ -27,11 +27,20 @@ public class SensorEntity implements Serializable {
     private int idSensor;
     @Column(name = "name_sensor", nullable = false)
     private String nameSensor;
+    @Column(name = "id_country", nullable = false)
+    private String idCountry;
+    @Column(name = "id_city", nullable = false)
+    private String idCity;
+    @Column(name = "gps_coordinates", nullable = false)
+    private String gpsCoordinates;
 
     @Override
     public String toString() {
         return "SensorEntity()\n" +
                 "\tidSensor=" + idSensor + "\n" +
-                "\tnameSensor='" + nameSensor + "\n";
+                "\tnameSensor='" + nameSensor + "\n" +
+                "\tidCountry=" + idCountry + "\n" +
+                "\tidCity=" + idCity + "\n" +
+                "\tgpsCoordinates=" + gpsCoordinates + "\n";
     }
 }
