@@ -1,14 +1,12 @@
 package imt.org.web.commonmodel.entities;
 
+import imt.org.web.commonmodel.model.MeasureType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -18,7 +16,6 @@ import java.io.Serializable;
 @Table(name = "SENSOR")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
 public class SensorEntity implements Serializable {
 
@@ -33,6 +30,12 @@ public class SensorEntity implements Serializable {
     private String idCity;
     @Column(name = "gps_coordinates", nullable = false)
     private String gpsCoordinates;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "measure_type", nullable = false)
+    private MeasureType measureType;
+    @ManyToOne
+    private SensorAlertParamEntity sensorAlertParam;
+
 
     @Override
     public String toString() {
@@ -41,6 +44,7 @@ public class SensorEntity implements Serializable {
                 "\tnameSensor='" + nameSensor + "\n" +
                 "\tidCountry=" + idCountry + "\n" +
                 "\tidCity=" + idCity + "\n" +
-                "\tgpsCoordinates=" + gpsCoordinates + "\n";
+                "\tgpsCoordinates=" + gpsCoordinates + "\n" +
+                "\tmeasureType=" + measureType + "\n";
     }
 }
