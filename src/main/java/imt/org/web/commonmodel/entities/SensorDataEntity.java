@@ -1,6 +1,7 @@
 package imt.org.web.commonmodel.entities;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -14,6 +15,7 @@ import java.sql.Timestamp;
 @Table(name = "SENSOR_DATA")
 @Getter
 @Setter
+@NoArgsConstructor
 public class SensorDataEntity implements Serializable {
 
     @Id

@@ -16,6 +16,7 @@ import java.io.Serializable;
 @Table(name = "SENSOR")
 @Getter
 @Setter
+@NoArgsConstructor
 @AllArgsConstructor
 public class SensorEntity implements Serializable {
 
