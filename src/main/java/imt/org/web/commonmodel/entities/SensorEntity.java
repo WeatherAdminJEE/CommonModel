@@ -34,6 +34,7 @@ public class SensorEntity implements Serializable {
     @Column(name = "measure_type", nullable = false)
     private MeasureType measureType;
     @ManyToOne
+    @JoinColumn(name = "id_sensor_alert_param", nullable = false)
     private SensorAlertParamEntity sensorAlertParam;
 
 

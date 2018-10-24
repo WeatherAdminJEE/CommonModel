@@ -20,8 +20,10 @@ public class SensorAlertEntity {
     @Column(name = "id_sensor_alert", nullable = false)
     private int idSensorAlert;
     @ManyToOne
+    @JoinColumn(name = "id_sensor", nullable = false)
     private SensorEntity sensor;
     @ManyToOne
+    @JoinColumn(name = "id_sensor_alert_param", nullable = false)
     private SensorAlertParamEntity sensorAlertParam;
     @Column(name = "start_date", nullable = false)
     private Timestamp startDate;

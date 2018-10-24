@@ -21,6 +21,7 @@ public class SensorDataEntity implements Serializable {
     @Column(name = "id_sensor_data", nullable = false)
     private int idSensorData;
     @ManyToOne
+    @JoinColumn(name = "id_sensor", nullable = false)
     private SensorEntity sensor;
     @Column(name = "measure_value", nullable = false)
     private double measureValue;
