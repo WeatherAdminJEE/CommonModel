@@ -27,7 +27,7 @@ public class SensorAlertEntity {
     private SensorAlertParamEntity sensorAlertParam;
     @Column(name = "start_date", nullable = false)
     private Timestamp startDate;
-    @Column(name = "end_date", nullable = false)
+    @Column(name = "end_date")
     private Timestamp endDate;
 
     public SensorAlertEntity(SensorEntity sensor, SensorAlertParamEntity sensorAlertParam, Timestamp startDate, Timestamp endDate) {
