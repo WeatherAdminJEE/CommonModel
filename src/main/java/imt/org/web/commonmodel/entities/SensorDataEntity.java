@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 /**
  * Sensor data entity
@@ -41,5 +42,21 @@ public class SensorDataEntity implements Serializable {
         return "SensorDataEntity (idSensor=" + sensor.getIdSensor() + ")\n" +
                 "\tmeasureValue=" + measureValue + "\n" +
                 "\tdate=" + date + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SensorDataEntity that = (SensorDataEntity) o;
+        return idSensorData == that.idSensorData &&
+                Double.compare(that.measureValue, measureValue) == 0 &&
+                sensor.equals( that.sensor) &&
+                date.equals( that.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idSensorData, sensor, measureValue, date);
     }
 }

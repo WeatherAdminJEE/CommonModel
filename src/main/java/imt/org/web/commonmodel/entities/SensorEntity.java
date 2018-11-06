@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Sensor entity
@@ -48,5 +49,24 @@ public class SensorEntity implements Serializable {
                 "\tidCity=" + idCity + "\n" +
                 "\tgpsCoordinates=" + gpsCoordinates + "\n" +
                 "\tmeasureType=" + measureType + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SensorEntity entity = (SensorEntity) o;
+        return idSensor == entity.idSensor &&
+                nameSensor.equals( entity.nameSensor) &&
+                idCountry.equals( entity.idCountry) &&
+                idCity.equals( entity.idCity) &&
+                gpsCoordinates.equals( entity.gpsCoordinates) &&
+                measureType == entity.measureType &&
+                sensorAlertParam.equals( entity.sensorAlertParam);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idSensor, nameSensor, idCountry, idCity, gpsCoordinates, measureType, sensorAlertParam);
     }
 }

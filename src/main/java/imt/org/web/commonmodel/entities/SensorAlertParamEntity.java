@@ -7,6 +7,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 /**
  * Sensor alert param entity
@@ -38,5 +39,20 @@ public class SensorAlertParamEntity implements Serializable {
                 "\tidSensorAlertParam=" + idSensorAlertParam + "\n" +
                 "\talertValue='" + alertValue + "\n" +
                 "\talertRange=" + alertRange + "\n";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SensorAlertParamEntity that = (SensorAlertParamEntity) o;
+        return idSensorAlertParam == that.idSensorAlertParam &&
+                Double.compare(that.alertValue, alertValue) == 0 &&
+                alertRange.equals(that.alertRange);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idSensorAlertParam, alertValue, alertRange);
     }
 }
