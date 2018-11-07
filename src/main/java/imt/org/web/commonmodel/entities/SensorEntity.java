@@ -35,7 +35,7 @@ public class SensorEntity implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "measure_type", nullable = false)
     private MeasureType measureType;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_sensor_alert_param", nullable = false)
     private SensorAlertParamEntity sensorAlertParam;
 
